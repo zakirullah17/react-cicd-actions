@@ -1,0 +1,12 @@
+name: Deploy Dist
+on: [push, workflow_dispatch]
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Get Code
+        run: |
+          echo "Cloning Repio..."
+          echp "${{toJson(github)}}"
+          git clone https://github.com/${{github.repository}}.git
+
